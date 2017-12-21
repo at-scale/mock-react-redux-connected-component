@@ -1,0 +1,4 @@
+--check-leaks
+--recursive
+--require ./test/utils/css-hooks.js
+--require ./test/utils/enzyme-config.js

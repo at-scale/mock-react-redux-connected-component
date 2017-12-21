@@ -1,0 +1,1 @@
+export {generateRandomTitle} from './title';

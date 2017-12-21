@@ -1,0 +1,10 @@
+.DS_STORE
+.bundle
+.eslintcache
+.idea
+.nyc_output
+npm-debug.log
+coverage
+dist
+node_modules
+*.swp
