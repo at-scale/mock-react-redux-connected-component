@@ -1,11 +1,8 @@
-import State from '../state';
-import {combineAndWrapReducers} from './combine-and-wrap-reducers';
+import {combineReducers} from 'redux';
 import {titleReducer as title} from './title';
 
-export const getWrappedReducers = () => {
-    const reducers = {
+export const getReducer = () => {
+    return combineReducers({
         title
-    };
-
-    return combineAndWrapReducers(reducers, State);
+    });
 };

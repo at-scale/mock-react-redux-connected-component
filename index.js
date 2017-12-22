@@ -1,3 +1,3 @@
 export {default as Header} from './src/components/header-connector';
-export {getWrappedReducers as headerReducers} from './src/reducers';
+export {getReducer as headerReducer} from './src/reducers';
 export {default as headerActions} from './src/actions';

@@ -1,7 +1,6 @@
-import * as reducerFactory from '../../../src/reducers/combine-and-wrap-reducers';
-import State from '../../../src/state';
+import * as redux from 'redux';
 import {expect} from 'code';
-import {getWrappedReducers} from '../../../src/reducers';
+import {getReducer} from '../../../src/reducers';
 import sinon from 'sinon';
 import {titleReducer as title} from '../../../src/reducers/title';
 
@@ -12,18 +11,18 @@ describe('Given the index reducer', () => {
         sandbox.restore();
     });
 
-    it('should wrap the composed reducer with the `State` type and return a the wrapped reducers', () => {
-        const expectedWrappedReducers = Symbol('wrappedReducersMock');
-        const combineAndWrapReducersStub = sandbox.stub(reducerFactory, 'combineAndWrapReducers').returns(expectedWrappedReducers);
+    it('should combine expected reducers', () => {
+        const expectedWrappedReducer = Symbol('wrappedReducerMock');
+        const combineReducersStub = sandbox.stub(redux, 'combineReducers').returns(expectedWrappedReducer);
         const expectedReducers = {
             title
         };
 
-        const wrappedReducers = getWrappedReducers();
+        const wrappedReducer = getReducer();
 
-        sinon.assert.calledOnce(combineAndWrapReducersStub);
-        sinon.assert.calledWithExactly(combineAndWrapReducersStub, expectedReducers, State);
+        sinon.assert.calledOnce(combineReducersStub);
+        sinon.assert.calledWithExactly(combineReducersStub, expectedReducers);
 
-        expect(wrappedReducers).equal(expectedWrappedReducers);
+        expect(wrappedReducer).equal(expectedWrappedReducer);
     });
 });
