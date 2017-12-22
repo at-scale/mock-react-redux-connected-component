@@ -8,7 +8,9 @@ import {titleReducer as title} from '../../../src/reducers/title';
 describe('Given the index reducer', () => {
     const sandbox = sinon.createSandbox();
 
-    afterEach(() => sandbox.restore());
+    afterEach(() => {
+        sandbox.restore();
+    });
 
     it('should wrap the composed reducer with the `State` type and return a the wrapped reducers', () => {
         const expectedWrappedReducers = Symbol('wrappedReducersMock');

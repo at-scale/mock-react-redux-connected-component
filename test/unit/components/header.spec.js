@@ -10,10 +10,12 @@ describe('Given the <Header/> component', () => {
     const chance = new Chance();
     const sandbox = sinon.createSandbox();
 
-    const requiredProps = () => ({
-        handleHeaderClick: sandbox.stub(),
-        title: chance.string()
-    });
+    const requiredProps = () => {
+        return {
+            handleHeaderClick: sandbox.stub(),
+            title: chance.string()
+        };
+    };
 
     const render = (props = requiredProps()) => {
         return shallow(<Header {...props}/>);

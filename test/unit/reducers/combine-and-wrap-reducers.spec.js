@@ -19,16 +19,24 @@ describe('Combine and wrap reducers', () => {
         modelStub = sandbox.stub();
     });
 
-    afterEach(() => sandbox.restore());
+    afterEach(() => {
+        sandbox.restore();
+    });
 
     const any = {
-        action: () => chance.hash(),
-        reducers: () => ({
-            reducer: chance.hash()
-        }),
-        state: () => ({
-            state: chance.hash()
-        })
+        action: () => {
+            return chance.hash();
+        },
+        reducers: () => {
+            return {
+                reducer: chance.hash()
+            };
+        },
+        state: () => {
+            return {
+                state: chance.hash()
+            };
+        }
     };
 
     it('should combine the provided reducers', () => {

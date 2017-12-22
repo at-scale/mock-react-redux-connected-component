@@ -7,7 +7,7 @@ describe('Given the title reducer', () => {
     const chance = new Chance();
     const defaultState = 'Default Title';
 
-    context('and invalid operations', () => {
+    describe('and invalid operations', () => {
         it('should return the default state if you pass an undefined state', () => {
             let undefinedState;
 
@@ -28,7 +28,7 @@ describe('Given the title reducer', () => {
         });
     });
 
-    context('when generating a random title', () => {
+    describe('when generating a random title', () => {
         it('should generate a random title', () => {
             const action = {
                 title: chance.string(),

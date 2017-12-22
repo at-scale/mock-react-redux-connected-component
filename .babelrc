@@ -1,4 +1,3 @@
 {
-    "babelrc": false,
     "extends": "./node_modules/katulong-preset-rodoabad/.babelrc"
 }

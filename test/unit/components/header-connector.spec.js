@@ -12,9 +12,11 @@ describe('Given the <Header/> connector', () => {
     const chance = new Chance();
     const sandbox = sinon.createSandbox();
 
-    const requiredProps = () => ({
-        title: chance.string()
-    });
+    const requiredProps = () => {
+        return {
+            title: chance.string()
+        };
+    };
 
     const render = (props = requiredProps()) => {
         const mockStore = mockReduxStore(props);
@@ -26,7 +28,9 @@ describe('Given the <Header/> connector', () => {
         sandbox.stub(actions, 'generateRandomTitle');
     });
 
-    afterEach(() => sandbox.restore());
+    afterEach(() => {
+        sandbox.restore();
+    });
 
     it('should be connecting the right component', () => {
         const props = requiredProps();
