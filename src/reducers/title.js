@@ -1,11 +1,11 @@
 import actions from '../actions';
 
-const generateRandomTitle = (state, action) => {
+const updateTitle = (state, action) => {
     return action.title;
 };
 
 const actionTypes = {
-    [actions.GENERATE_RANDOM_TITLE]: generateRandomTitle
+    [actions.GENERATE_RANDOM_TITLE]: updateTitle
 };
 
 export const titleReducer = (state = 'Default Title', action) => {

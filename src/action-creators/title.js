@@ -5,7 +5,7 @@ const chance = new Chance();
 
 export const generateRandomTitle = () => {
     return {
-        title: chance.string(),
+        title: chance.sentence(),
         type: actions.GENERATE_RANDOM_TITLE
     };
 };

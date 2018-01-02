@@ -1,10 +1,11 @@
-import {Header, headerReducer} from '../index';
+import {Header} from '../index';
 import React from 'react';
 import ReactDom from 'react-dom';
 import {Provider as ReactReduxProvider} from 'react-redux';
 import {create} from './store-configurator';
+import {getReducer} from './root-reducer';
 
-const store = create(headerReducer());
+const store = create(getReducer());
 
 ReactDom.render(
     <div className='demo'>
